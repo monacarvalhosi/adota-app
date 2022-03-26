@@ -1,0 +1,161 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons left>
+      <button ion-button (click)="openMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      RecAdoption
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="cabecalho" *ngIf="adotante != null">
+    Olá <b> {{adotante.nome}}! </b>
+    <p>Esses são os cães recomendados para você!</p>
+    <p>Por favor, avalie cada um:</p>
+  </div>
+
+  <ion-list *ngIf="recomendados != null">
+    <ion-card class="card" *ngFor="let animal of recomendados">
+      <ion-card-header>
+          <div class="nome">
+           {{animal.nome}}
+           <div *ngIf="animal.foto">
+            <img class="foto" src={{animal.foto}} /> 
+           </div>
+           <div *ngIf="!animal.foto"> 
+            <img  class="semfoto" src="/assets/imgs/semfoto.svg" /> 
+           </div>
+          </div>
+        
+      </ion-card-header>
+      <ion-card-content>
+        <table>
+          
+        </table>
+        <div class="fonte">
+          <ion-grid>
+    
+            <ion-row>
+              <ion-col col-8>
+                <b>Sexo:</b>
+              </ion-col>
+              <ion-col col-4>
+                {{animal.prop_sexo}}
+              </ion-col>
+            </ion-row>
+    
+            <ion-row>
+              <ion-col col-8>
+                <b>Porte:</b>
+              </ion-col>
+              <ion-col col-4>
+                {{animal.porte}}
+              </ion-col>
+            </ion-row>
+    
+            <ion-row>
+              <ion-col col-8>
+                <b>Pelagem:</b>
+              </ion-col>
+              <ion-col col-4>
+                {{animal.pelagem}}
+              </ion-col>
+            </ion-row>
+    
+            <ion-row>
+              <ion-col col-8>
+                <b>Ideal para {{animal.moradia}}:</b>
+              </ion-col>
+              <ion-col col-4>
+                sim
+              </ion-col>
+            </ion-row>
+    
+            <ion-row>
+              <ion-col col-8>
+                <b>Gosta de crianças:</b>
+              </ion-col>
+              <ion-col col-4>
+                {{animal.prop_amigavel_crianca}}
+              </ion-col>
+            </ion-row>
+    
+            <ion-row>
+              <ion-col col-8>
+                <b>Cão de guarda:</b>
+              </ion-col>
+              <ion-col col-4>
+                {{animal.prop_guarda}}
+              </ion-col>
+            </ion-row>
+    
+            <ion-row>
+              <ion-col col-8>
+                <b>Brincalhão:</b>
+              </ion-col>
+              <ion-col col-4>
+                {{animal.prop_brincadeira}}
+              </ion-col>
+            </ion-row>
+    
+            <ion-row>
+              <ion-col col-8>
+                <b>Necessidade de correr:</b>
+              </ion-col>
+              <ion-col col-4>
+                {{animal.prop_exercicio}}
+              </ion-col>
+            </ion-row>
+    
+            <ion-row>
+              <ion-col col-8>
+                <b>Queda de pêlos:</b>
+              </ion-col>
+              <ion-col col-4>
+                {{animal.prop_queda_pelo}}
+              </ion-col>
+            </ion-row>
+    
+            <ion-row>
+              <ion-col col-8>
+                <b>Tende a latir:</b>
+              </ion-col>
+              <ion-col col-4>
+                {{animal.prop_tendencia_latir}}
+              </ion-col>
+            </ion-row>
+    
+          </ion-grid>
+    
+        </div>
+      </ion-card-content>
+        <ionic3-star-rating #rating 
+          activeIcon = "ios-star"
+          defaultIcon = "ios-star-outline"
+          activeColor = "#488aff" 
+          defaultColor = "#7d908c"
+          readonly="false"
+          rating={{animal.avaliacao}}
+          fontSize = "32px"
+          (ratingChanged)="logRatingChange($event, animal)">
+        </ionic3-star-rating>
+    </ion-card>
+  
+  </ion-list>
+  <div *ngIf="countRecomendados !== 10">
+    <button ion-button full (click)="scrollUp($event)">
+      <!-- <button ion-button full (click)="go()">  -->
+
+      Ver mais
+    </button>
+  </div>
+  <div *ngIf="countRecomendados === 10">
+    <button ion-button full (click)="goToConclusaoPage()">
+      Concluir
+    </button>
+  </div>
+</ion-content>

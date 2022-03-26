@@ -1,0 +1,26 @@
+page-apresentacao {
+  .padding {
+    padding: 8px;
+  }
+
+  .imagem {
+    width: 50%;
+  }
+
+  .botao {
+    margin-top: 30px;
+  }
+
+  .botaoProximo {
+    position: absolute;
+    bottom: 70px;
+    left: 5%;
+    width: 90%;
+  }
+
+  .texto {
+    text-align: justify;
+    padding: 8px;
+
+  }
+}

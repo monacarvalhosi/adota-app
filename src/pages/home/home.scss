@@ -1,0 +1,46 @@
+page-home {
+
+    ion-title{
+        text-align: center;
+        margin-left: -30px;
+    }
+
+    .card {
+        background-color: #e2f8f3;
+    }
+
+    .foto {
+        width: 155px;
+        height: 110px;
+        float: right;
+    }
+
+    .semfoto {
+        width: 155px;
+        height: 100px;
+        float: right;
+    }
+
+    .card-header-md {
+        padding: 8px 5px 0px 10px;
+    }
+
+    .fonte {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .principais {
+        font-size: 12px;
+    }
+
+    .nome {
+        font-size: 20px;
+        margin-bottom: 10px;
+        word-wrap: break-word;
+    }
+
+    .cabecalho {
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+}

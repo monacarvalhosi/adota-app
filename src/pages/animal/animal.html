@@ -1,0 +1,187 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{ title }}</ion-title>
+    <ion-buttons right>
+      <button ion-button type="submit" [disabled]="!form.valid" (click)="onSubmit()"> 
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="form">
+    <button ion-button block  (click)="getImage($event)">Carregar foto</button>
+    <ion-item>
+      <ion-label stacked>Nome</ion-label>
+      <ion-input type="text" formControlName="nome" maxLength="13"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.nome.valid && 
+    (form.controls.nome.dirty || form.controls.nome.touched)" color="danger">
+      <div [hidden]="!form.controls.nome.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Ideal para apartamento?</ion-label>
+      <ion-select [(ngModel)]="moradia" formControlName="moradia">
+        <!-- <ion-option value="nao_sei">Não Sei</ion-option> -->
+        <ion-option value="casa">Não</ion-option>
+        <ion-option value="apto">Sim</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.moradia.valid &&
+     (form.controls.moradia.dirty || form.controls.moradia.touched)" color="danger">
+      <div [hidden]="!form.controls.moradia.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Porte</ion-label>
+      <ion-select [(ngModel)]="porte" formControlName="porte">
+        <ion-option value="pequeno">Pequeno</ion-option>
+        <ion-option value="medio">Médio</ion-option>
+        <ion-option value="grande">Grande</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="!form.controls. porte.valid &&
+     (form.controls.porte.dirty || form.controls. porte.touched)" color="danger">
+      <div [hidden]="!form.controls.porte.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    
+    <ion-item>
+      <ion-label stacked>Pelagem</ion-label>
+      <ion-select [(ngModel)]="pelagem" formControlName="pelagem">
+        <ion-option value="curta">Curta</ion-option>
+        <ion-option value="longa">Longa</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.pelagem.valid &&
+     (form.controls.pelagem.dirty || form.controls.pelagem.touched)" color="danger">
+      <div [hidden]="!form.controls.pelagem.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Sexo</ion-label>
+      <ion-select [(ngModel)]="sexo" formControlName="sexo">
+        <ion-option value="femea">Fêmea</ion-option>
+        <ion-option value="macho">Macho</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.sexo.valid && 
+    (form.controls.sexo.dirty || form.controls.sexo.touched)" color="danger">
+      <div [hidden]="!form.controls.sexo.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Amigável com crianças</ion-label>
+      <ion-select [(ngModel)]="amigavel_crianca" formControlName="amigavel_crianca">
+        <!-- <ion-option value="nao_sei">Não Sei</ion-option> -->
+        <ion-option value="amigavel">Sim</ion-option>
+        <ion-option value="nao_amigavel">Não</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.amigavel_crianca.valid &&
+     (form.controls.amigavel_crianca.dirty || form.controls.amigavel_crianca.touched)" color="danger">
+      <div [hidden]="!form.controls.amigavel_crianca.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Serve como cão de guarda?</ion-label>
+      <ion-select [(ngModel)]="guarda" formControlName="guarda">
+        <ion-option value="guarda">Sim</ion-option>
+        <ion-option value="nao_guarda">Não</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.guarda.valid && 
+    (form.controls.guarda.dirty || form.controls.guarda.touched)" color="danger">
+      <div [hidden]="!form.controls.guarda.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>É um animal brincalhão?</ion-label>
+      <ion-select [(ngModel)]="brincadeira" formControlName="brincadeira">
+        <ion-option value="brincalhao">Sim</ion-option>
+        <ion-option value="nao_brincalhao">Não</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.brincadeira.valid && 
+    (form.controls.brincadeira.dirty || form.controls.brincadeira.touched)" color="danger">
+      <div [hidden]="!form.controls.brincadeira.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Tem necessidade de correr, passear?</ion-label>
+      <ion-select [(ngModel)]="exercicio" formControlName="exercicio">
+        <ion-option value="ativo">Sim</ion-option>
+        <ion-option value="nao_ativo">Não</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.brincadeira.valid && 
+    (form.controls.exercicio.dirty || form.controls.exercicio.touched)" color="danger">
+      <div [hidden]="!form.controls.exercicio.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Solta muito pêlo?</ion-label>
+      <ion-select [(ngModel)]="queda_pelo" formControlName="queda_pelo">
+        <ion-option value="queda_pelo">Sim</ion-option>
+        <ion-option value="nao_queda_pelo">Não</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.queda_pelo.valid && 
+    (form.controls.queda_pelo.dirty || form.controls.queda_pelo.touched)" color="danger">
+      <div [hidden]="!form.controls.queda_pelo.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Possui tendência em latir?</ion-label>
+      <ion-select [(ngModel)]="tendencia_latir" formControlName="tendencia_latir">
+        <ion-option value="tende_latir">Sim</ion-option>
+        <ion-option value="nao_tende_latir">Não</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.brincadeira.valid && 
+    (form.controls.tendencia_latir.dirty || form.controls.tendencia_latir.touched)" color="danger">
+      <div [hidden]="!form.controls.tendencia_latir.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item> 
+
+    <div *ngIf="flagInserirFoto">
+      <div class="foto">
+        <p>Selecione a foto do cachorro</p>
+        <div *ngIf="animal.foto" class="foto"> <img src="{{ animal.foto }}" /> </div>
+      </div> 
+      
+      <div class="alterarImagem">
+        <button ion-button block  (click)="getImage()">Carregar foto</button>
+      </div>
+    </div>
+    
+  
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!form.valid" (click)="onSubmit()">Salvar</button>
+    </div>
+  </form>
+
+</ion-content>

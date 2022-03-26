@@ -1,0 +1,55 @@
+
+<ion-header>
+  <ion-navbar>
+    <div *ngIf="!randomico">
+      <ion-title>Parte final!</ion-title>
+    </div>
+    <div *ngIf="randomico">
+      <ion-title>Concluído!</ion-title>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="!randomico">
+    <p>Agora vamos recomendar mais 10 animais para você!</p>
+    <p>Por favor, avalie-os!</p>
+    <button ion-button full (click)="goToHome()"> 
+      Ir
+    </button>
+  </div>
+
+
+  <div class="agradecimento"  *ngIf="randomico">
+    <ion-card>
+      <ion-card-header> 
+       <h4>Agradecemos sua participação!</h4>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Você nos ajudou na avaliação do sistema de recomendação RecAdoption.</p>
+        <p>Trabalho de TCC de Lorena Santos</p>
+        <p>Orientado pelo professor Frederico Durão</p>
+        <p>Bacharelado de Sistemas de Informação - UFBA</p>
+      </ion-card-content>
+    </ion-card>
+   
+    <hr/>
+    <div class="sugestao">
+        <p>Caso queira, deixe sua sugestão para a próxima versão:</p>
+
+      <div >
+        <ion-card>
+          <ion-textarea color="lightSecondary" rows="4" cols="4" [(ngModel)]="adotante.sugestao" placeholder="Digite aqui" maxLength=140></ion-textarea>
+       </ion-card>
+       <button class="margem" ion-button block (click)="enviarSugestao()" round medium outline>Enviar</button>
+      </div>
+    
+      <button ion-button block (click)="sair()" round medium>Sair</button>
+     
+    </div>
+    
+  </div>
+ 
+ 
+  
+</ion-content>

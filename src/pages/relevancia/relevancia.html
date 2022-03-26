@@ -1,0 +1,88 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Relevância das Caracteristícas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label floating>Onde você mora:</ion-label>
+    <ion-range min="-200" max="200" color="secondary">
+      <ion-label slot="start">0</ion-label>
+      <ion-label slot="end">100</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Porte do cão ideal:</ion-label>
+
+    <ion-label slot="start">0</ion-label>
+    <ion-label slot="end">100</ion-label>
+
+  </ion-item>
+
+   <ion-item>
+    <ion-label floating>Pelagem do cão ideal:</ion-label>
+
+    <ion-label slot="start">0</ion-label>
+    <ion-label slot="end">100</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Sexo do cão ideal:</ion-label>
+
+    <ion-label slot="start">0</ion-label>
+    <ion-label slot="end">100</ion-label>
+
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Prefere um cão que goste de crianças?</ion-label>
+
+    <ion-label slot="start">0</ion-label>
+    <ion-label slot="end">100</ion-label>
+  </ion-item>
+
+  <ion-item>
+      <ion-label floating>Pretende adotar o pet como cão de guarda?</ion-label>
+
+      <ion-label slot="start">0</ion-label>
+      <ion-label slot="end">100</ion-label>
+    </ion-item>
+
+     <ion-item>
+        <ion-label floating>Gosta de cão brincalhão?</ion-label>
+
+        <ion-label slot="start">0</ion-label>
+        <ion-label slot="end">100</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Tem disponibilidade para correr com seu novo cão?</ion-label>
+
+        <ion-label slot="start">0</ion-label>
+        <ion-label slot="end">100</ion-label>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating> Queda de pêlos seria um problema em sua residência?</ion-label>
+
+          <ion-label slot="start">0</ion-label>
+          <ion-label slot="end">100</ion-label>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating> Latidos seria um problema em sua residência?</ion-label>
+
+            <ion-label slot="start">0</ion-label>
+            <ion-label slot="end">100</ion-label>
+          </ion-item>
+
+<div class="botoes">
+    <button *ngIf="!flagEditar"  ion-button block (click)="createRelevancia()" round>Cadastrar</button>
+    <button *ngIf="flagEditar"  ion-button block (click)="createRelevancia()" round>Atualizar</button>
+
+</div>
+
+</ion-content>

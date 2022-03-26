@@ -1,0 +1,37 @@
+<ion-slides pager (ionSlideDidChange)="slideChanged()">
+
+  <ion-slide class="padding">
+    <div>
+      <img class="imagem" src="/assets/imgs/logo.png"/>
+      <h2>Bem vindo ao RecAdoption!</h2>
+      <p>O aplicativo que recomenda cães para adoção com características semelhante ao seu estilo de vida!</p>  
+    </div>
+    <button class="botaoProximo" ion-button (click)="goToNext()" round large outline>Próximo</button>
+
+  </ion-slide>
+
+  <ion-slide class="padding">
+    <div>
+      <img class="imagem" src="/assets/imgs/principal.png"/>
+      <h2>Objetivo!</h2>
+      <p>Essa versão inicial do RecAdoption é para um estudo do algoritmo de recomendação utilizado no aplicativo  e com base nisso implementarmos a versão de adoção de fato!</p>
+    </div>  
+    <button class="botaoProximo" ion-button (click)="goToNext()" round large outline>Próximo</button>
+  </ion-slide>
+
+  <ion-slide  class="padding" >
+    <h2>Passo a passo!</h2>
+    <div class="texto">
+      <p>Para receber recomendações é preciso que você siga os passos abaixo:</p>
+      <ol>
+        <li>Criar um cadastro com seu perfil</li>
+        <li> Avaliar com estrelinha <ion-icon name="star-outline"></ion-icon> cada animal recomendado na sua tela </li>
+        <li>Conclusão: depois de avaliar os 20 animais o app indicará que você concluiu a pesquisa</li>
+      </ol>
+    </div>
+   
+
+    <button class="botaoProximo" ion-button (click)="goToProfilePage()" round large>Começar</button>
+  </ion-slide>
+
+</ion-slides>

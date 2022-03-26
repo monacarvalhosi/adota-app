@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color='primary'>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div>
+    <!-- <img class="logo" src="/assets/imgs/logo3.PNG" /> -->
+    <img class="logo" src="/assets/imgs/logo1.JPG" />
+  </div>
+   
+  <ion-item>
+    <ion-label floating>Email</ion-label>
+    <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label floating>Senha</ion-label>
+    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+  </ion-item>
+
+
+
+  <div class="botoes">
+    <button ion-button block (click)="login()" round medium>Login</button>
+    <p>Novo por aqui?</p>
+    <button class="botao_cadastrar" block ion-button (click)="register()" round medium outline>Cadastrar</button>
+  </div>
+
+</ion-content> 

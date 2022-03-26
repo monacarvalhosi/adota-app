@@ -1,0 +1,33 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cadastro</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <div class="titulo">
+      <p>Digite seu email e crie uma senha</p>
+  </div>
+    <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+      </ion-item>
+    
+    
+      <ion-item>
+        <ion-label floating>Senha (minimo 6 caracteres)</ion-label>
+        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Confirmar Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="confirmarSenha"></ion-input>
+      </ion-item>
+    
+<div class="botoes">
+    <button  ion-button block (click)="verificaSenha()" round>Cadastrar</button>
+</div>
+  
+</ion-content>

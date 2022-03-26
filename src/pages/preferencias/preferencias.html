@@ -1,0 +1,22 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Meu perfil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding *ngIf="adotante != null">
+  <ion-item>
+      <p>Porte {{adotante.prop_porte}}...{{adotante.prop_sexo}} </p>
+      <p> Pelagem {{adotante.pelagem}}...  Ideal p/ {{adotante.moradia}}</p>
+      <p>Gosta de crianças: {{adotante.prop_amigavel_crianca}} </p>
+      <p>
+        <b>Cão de guarda:</b> {{adotante.prop_guarda}}
+      </p>
+      <p> <b>Brincalhão:</b> {{adotante.prop_brincadeira}} </p>
+      <p> <b>Necessidade de correr:</b> {{adotante.prop_exercicio}} </p>
+      <p> <b>Queda de pêlo:</b> {{adotante.prop_queda_pelo}} </p>
+      <p> <b>Tende a latir:</b> {{adotante.prop_tendencia_latir}} </p>
+  </ion-item>
+  
+</ion-content>

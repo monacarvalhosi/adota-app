@@ -1,0 +1,109 @@
+
+<ion-header>
+    <ion-navbar>
+      <ion-title>Cadastro</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+    <ion-item>
+        <ion-label floating>Seu nome:</ion-label>
+        <ion-input [(ngModel)]="adotante.nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Onde você mora:</ion-label>
+      <ion-select [(ngModel)]="adotante.moradia">
+        <ion-option value="casa">Casa</ion-option>
+        <ion-option value="apto">Apartamento</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Porte do cão ideal:</ion-label>
+      <ion-select [(ngModel)]="adotante.porte">
+        <!-- <ion-option value="nao_sei">Sem preferência</ion-option> -->
+        <ion-option value="pequeno">Pequeno</ion-option>
+        <ion-option value="medio">Médio</ion-option>
+        <ion-option value="grande">Grande</ion-option>
+      </ion-select>
+    </ion-item>
+
+     <ion-item>
+      <ion-label floating>Pelagem do cão ideal:</ion-label>
+      <ion-select [(ngModel)]="adotante.pelagem">
+        <!-- <ion-option value="nao_sei">Sem preferência</ion-option> -->
+        <ion-option value="curta">Curta</ion-option>
+        <ion-option value="longa">Longa</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Sexo do cão ideal:</ion-label>
+      <ion-select [(ngModel)]="adotante.sexo">
+        <!-- <ion-option value="nao_sei"> Sem preferência</ion-option> -->
+          <ion-option value="femea">Fêmea</ion-option>
+          <ion-option value="macho">Macho</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Prefere um cão que goste de crianças?</ion-label>
+      <ion-select [(ngModel)]="adotante.amigavel_crianca">
+        <!-- <ion-option value="nao_sei">Sem preferência</ion-option> -->
+          <ion-option value="amigavel">Sim</ion-option>
+          <ion-option value="nao_amigavel">Não</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>Pretende adotar o pet como cão de guarda?</ion-label>
+        <ion-select [(ngModel)]="adotante.guarda">
+          <!-- <ion-option value="nao_sei">Sem preferência</ion-option> -->
+            <ion-option value="guarda">Sim</ion-option>
+            <ion-option value="nao_guarda">Não</ion-option>
+        </ion-select>
+      </ion-item>
+
+       <ion-item>
+          <ion-label floating>Gosta de cão brincalhão?</ion-label>
+          <ion-select [(ngModel)]="adotante.brincadeira">
+            <!-- <ion-option value="nao_sei">Sem preferência</ion-option> -->
+              <ion-option value="brincalhao">Sim</ion-option>
+              <ion-option value="nao_brincalhao">Não</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Tem disponibiliade para correr com seu novo cão?</ion-label>
+          <ion-select [(ngModel)]="adotante.exercicio">
+            <!-- <ion-option value="nao_sei">Sem preferência</ion-option> -->
+              <ion-option value="ativo">Sim</ion-option>
+              <ion-option value="nao_ativo">Não</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating> Queda de pêlos seria um problema em sua residência?</ion-label>
+            <ion-select [(ngModel)]="adotante.queda_pelo">
+              <!-- <ion-option value="nao_sei">Sem preferência</ion-option> -->
+                <ion-option value="nao_queda_pelo">Sim</ion-option>
+                <ion-option value="queda_pelo">Não</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+              <ion-label floating> Latidos seria um problema em sua residência?</ion-label>
+              <ion-select [(ngModel)]="adotante.tendencia_latir">
+                <!-- <ion-option value="nao_sei">Sem preferência</ion-option> -->
+                  <ion-option value="nao_tende_latir">Sim</ion-option>
+                  <ion-option value="tende_latir">Não</ion-option>
+              </ion-select>
+            </ion-item>
+
+  <div class="botoes">
+      <button *ngIf="!flagEditar"  ion-button block (click)="createProfile()" round>Cadastrar</button>
+      <button *ngIf="flagEditar"  ion-button block (click)="createProfile()" round>Atualizar</button>
+      <button *ngIf="flagEditar"  ion-button block (click)="setPageRelevancia()" round>Continuar</button>
+  </div>
+
+  </ion-content>

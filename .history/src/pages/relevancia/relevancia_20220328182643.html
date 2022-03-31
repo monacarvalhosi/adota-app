@@ -1,0 +1,95 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Relevância das Caracteristícas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label floating>Onde você mora:</ion-label>
+    <ion-range [(ngModel)]="adotante.relevancia_moradia" min="0" max="10" step="1" snaps="true" color="dark">
+      <ion-label range-left class="small-text">0</ion-label>
+      <ion-label range-right>10</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Porte do cão ideal:</ion-label>
+    <ion-range [(ngModel)]="adotante.relevancia_porte" min="0" max="10" color="secondary">
+      <ion-label slot="start">0</ion-label>
+      <ion-label slot="end">10</ion-label>
+    </ion-range>
+  </ion-item>
+
+   <ion-item>
+    <ion-label floating>Pelagem do cão ideal:</ion-label>
+    <ion-range [(ngModel)]="adotante.relevancia_pelagem" min="0" max="10" color="secondary">
+      <ion-label slot="start">0</ion-label>
+      <ion-label slot="end">10</ion-label>
+    </ion-range>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Sexo do cão ideal:</ion-label>
+    <ion-range [(ngModel)]="adotante.relevancia_sexo" min="0" max="10" color="secondary">
+      <ion-label slot="start">0</ion-label>
+      <ion-label slot="end">10</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Prefere um cão que goste de crianças?</ion-label>
+    <ion-range [(ngModel)]="adotante.relevancia_amigavel_crianca" min="0" max="10" color="secondary">
+      <ion-label slot="start">0</ion-label>
+      <ion-label slot="end">10</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Pretende adotar o pet como cão de guarda?</ion-label>
+    <ion-range [(ngModel)]="adotante.relevancia_guarda" min="0" max="10" color="secondary">
+      <ion-label slot="start">0</ion-label>
+      <ion-label slot="end">10</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Gosta de cão brincalhão?</ion-label>
+    <ion-range [(ngModel)]="adotante.relevancia_brincadeira" min="0" max="10" color="secondary">
+        <ion-label slot="start">0</ion-label>
+        <ion-label slot="end">10</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Tem disponibilidade para correr com seu novo cão?</ion-label>
+    <ion-range [(ngModel)]="adotante.relevancia_exercicio" min="0" max="10" color="secondary">
+      <ion-label slot="start">0</ion-label>
+      <ion-label slot="end">10</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating> Queda de pêlos seria um problema em sua residência?</ion-label>
+    <ion-range [(ngModel)]="adotante.relevancia_queda_pelo" min="0" max="10" color="secondary">
+      <ion-label slot="start">0</ion-label>
+      <ion-label slot="end">10</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating> Latidos seria um problema em sua residência?</ion-label>
+    <ion-range [(ngModel)]="adotante.relevancia_tendencia_latir" min="0" max="10" color="secondary">
+      <ion-label slot="start">0</ion-label>
+      <ion-label slot="end">10</ion-label>
+    </ion-range>
+  </ion-item>
+
+<div class="botoes">
+    <button *ngIf="!flagEditar"  ion-button block (click)="createProfile()" round>Cadastrar</button>
+    <button *ngIf="flagEditar"  ion-button block (click)="createProfile()" round>Atualizar</button>
+
+</div>
+
+</ion-content>
